@@ -1,5 +1,13 @@
 {
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
-  "projects": {}
+  "projects": {
+    "api": "apps/api",
+    "api-util-interfaces": "libs/api/util-interfaces",
+    "client": "apps/client",
+    "client-e2e": "apps/client-e2e",
+    "client-ui-shared": "libs/client/ui-shared",
+    "client-ui-shared-e2e": "apps/client-ui-shared-e2e",
+    "client-utils": "libs/client/utils"
+  }
 }
