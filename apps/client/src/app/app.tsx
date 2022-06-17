@@ -30,6 +30,7 @@ export function App() {
       <ul>
         <li>hello</li>
         <li>world</li>
+        <li>world</li>
       </ul>
     </>
   );
