@@ -30,7 +30,7 @@ jobs:
       - run: npm ci
       # - run: npm run build --if-present
       - run: npx nx run client:build
-      # - run: npx nx run client-ui-shared:build-storybook
+      - run: npx nx run client-ui-shared:build-storybook
       - run: curl -X POST -d {} ${{ secrets.NETLIFY_HOOK }}
       # - run: git push heroku main
       # - run: npm test
