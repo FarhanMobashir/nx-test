@@ -1,0 +1,46 @@
+
+> nx run client-ui-shared:build-storybook --output-dir=C:\\Users\\farha\\AppData\\Local\\Temp\\chromatic--24744-AzcCWQ5vNDKw
+
+
+>  NX  ui framework: @storybook/react
+
+
+>  NX  Storybook builder starting ...
+
+info => Cleaning outputDir: D:\nx-react-express\dist\storybook\client-ui-shared
+info => Loading presets
+info => Compiling manager..
+info => Compiling preview..
+info Addon-docs: using MDX1
+info => Loading Nrwl React Storybook preset from "@nrwl/react/plugins/storybook"
+info => Using default Webpack5 setup
+info => Manager built (30 s)
+info => Preview built (34 s)
+WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+WARN This can impact web performance.
+WARN Assets: 
+WARN   273.65fc2446.iframe.bundle.js (592 KiB)
+WARN   566.8c660b53.iframe.bundle.js (793 KiB)
+WARN   806.12aff746.iframe.bundle.js (1.69 MiB)
+WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+WARN Entrypoints:
+WARN   main (1.71 MiB)
+WARN       runtime~main.d4addde2.iframe.bundle.js
+WARN       806.12aff746.iframe.bundle.js
+WARN       main.b66fb06b.iframe.bundle.js
+WARN 
+info => Output directory: D:\nx-react-express\dist\storybook\client-ui-shared
+
+>  NX  Storybook builder finished ...
+
+
+>  NX  Storybook files available in dist/storybook/client-ui-shared
+
+
+ 
+
+ >  NX   Successfully ran target build-storybook for project client-ui-shared
+
+
+   See Nx Cloud run details at https://nx.app/runs/SfjTaI1SOVA
+
