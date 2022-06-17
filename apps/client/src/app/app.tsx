@@ -27,6 +27,10 @@ export function App() {
         suscipit similique dolor labore aut officia optio placeat! Consequuntur
         ab dolore vitae mollitia?
       </p>
+      <ul>
+        <li>hello</li>
+        <li>world</li>
+      </ul>
     </>
   );
 }
