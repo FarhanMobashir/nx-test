@@ -17,7 +17,18 @@ export function App() {
       .then((d) => d.json())
       .then((d) => setData(d.message));
   }, []);
-  return <Header title={data || '...'} />;
+  return (
+    <>
+      <Header title={data || '...'} />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+        dolores in necessitatibus, error quasi soluta id, repellendus magni
+        voluptas excepturi nobis eos illo. Nemo, recusandae mollitia iste
+        suscipit similique dolor labore aut officia optio placeat! Consequuntur
+        ab dolore vitae mollitia?
+      </p>
+    </>
+  );
 }
 
 export default App;
