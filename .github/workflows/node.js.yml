@@ -28,12 +28,6 @@ jobs:
       - run: npm install
       - run: npm i webpack --save-dev
       - run: npm ci
-      # - run: npm run build --if-present
-      - run: npx nx run client:build
-      - run: npx nx run client-ui-shared:build-storybook
-      - run: curl -X POST -d {} ${{ secrets.NETLIFY_HOOK }}
-      # - run: git push heroku main
-      # - run: npm test
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -45,3 +39,48 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: npx nx run client:lint
+  deploy-client:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install
+      - run: npx nx run client:build
+      - run: curl -X POST -d {} ${{ secrets.NETLIFY_CLIENT_HOOK }}
+  deploy-story-book:
+    # Operating system to run job on
+    runs-on: ubuntu-latest
+    # Steps in job
+    steps:
+      # Get code from repo
+      - name: Checkout code
+        uses: actions/checkout@v1
+      # Install NodeJS
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      # Run npm install and build on our code
+      - run: npm install
+      - run: npx nx run client-ui-shared:build-storybook
+      # Deploy to Netlify using our production secrets
+      - run: curl -X POST -d {} ${{ secrets.NETLIFY_STORYBOOK_HOOK }}
+  deploy-server:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install
+      - run: npx nx run api:test
+      - run: npx nx run api:lint
+      - run: npx nx run api:build
+      - run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+      - run: git push heroku main
