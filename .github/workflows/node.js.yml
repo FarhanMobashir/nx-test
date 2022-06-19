@@ -83,4 +83,4 @@ jobs:
       - run: npx nx run api:lint
       - run: npx nx run api:build
       - run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-      - run: git push heroku master
+      - run: git push heroku main
