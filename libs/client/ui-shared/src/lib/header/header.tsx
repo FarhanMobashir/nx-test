@@ -7,10 +7,9 @@ export interface HeaderProps {
 
 const StyledHeader = styled.div`
   color: white;
-  background-color: #0000009a;
+  background-color: #c700009a;
   padding: 10px;
   font-size: 1.5em;
-  font-weight: bold;
   text-align: center;
 `;
 
