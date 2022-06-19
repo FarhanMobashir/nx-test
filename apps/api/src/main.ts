@@ -8,7 +8,7 @@ import * as express from 'express';
 const app = express();
 
 app.get('/api', (req, res) => {
-  res.send({ message: 'ping....' });
+  res.send({ message: `ping....${JSON.stringify(req.hostname)}` });
 });
 
 const port = process.env.port || 3333;

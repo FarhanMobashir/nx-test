@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "dev": "nx run-many --target=serve --projects=client,api --parallel=true",
     "build-storybook": "nx run client-ui-shared:build-storybook",
     "test": "nx test",
     "chromatic": "npx chromatic --project-token=5118fb66c5bc"
