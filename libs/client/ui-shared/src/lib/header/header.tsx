@@ -7,13 +7,17 @@ export interface HeaderProps {
 
 const StyledHeader = styled.div`
   color: white;
-  background-color: black;
+  background-color: #0000009a;
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
 `;
 
 export function Header(props: HeaderProps) {
   return (
     <StyledHeader>
-      <h1>{props.title}</h1>
+      <h3>{props.title}</h3>
     </StyledHeader>
   );
 }
