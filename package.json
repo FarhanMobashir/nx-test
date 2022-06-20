@@ -6,6 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "heroku-postbuild": "nx run api:build",
+    "start-server": "nx run api:serve",
     "dev": "nx run-many --target=serve --projects=client,api --parallel=true",
     "build-storybook": "nx run client-ui-shared:build-storybook",
     "test": "nx test",
