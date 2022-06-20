@@ -67,20 +67,20 @@ jobs:
       - run: npm install
       # Deploy to Netlify using our production secrets
       - run: curl -X POST -d {} ${{ secrets.NETLIFY_STORYBOOK_HOOK }}
-  deploy-server:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm install
-      - run: npx nx run api:test
-      - run: npx nx run api:lint
-      - run: npx nx run api:build
-      - run: git fetch --all --unshallow
-      - run: git pull origin main
-      # - run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-      - run: git push heroku main
+  # deploy-server:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #         cache: 'npm'
+  #     - run: npm install
+  #     - run: npx nx run api:test
+  #     - run: npx nx run api:lint
+  #     - run: npx nx run api:build
+  #     - run: git fetch --all --unshallow
+  #     - run: git pull origin main
+  #     # - run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+  #     - run: git push heroku main
