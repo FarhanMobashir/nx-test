@@ -1,2 +1,1 @@
-install: npm i @nrwl/cli --save-dev
-start: nx run api:serve
+start: npx nx run api:serve
