@@ -1,1 +1,1 @@
-export * from './lib/client-utils';
+export * from './capitalize';

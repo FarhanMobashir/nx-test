@@ -1,3 +1,4 @@
+import capitalize from 'libs/client/utils/src/capitalize';
 import styled from 'styled-components';
 
 /* eslint-disable-next-line */
@@ -16,7 +17,7 @@ const StyledHeader = styled.div`
 export function Header(props: HeaderProps) {
   return (
     <StyledHeader>
-      <h3>{props.title}</h3>
+      <h3>{capitalize(props.title)}</h3>
     </StyledHeader>
   );
 }

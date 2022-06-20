@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import NxWelcome from './nx-welcome';
-
 import { Route, Routes, Link } from 'react-router-dom';
 import { Header } from '@nx-react-express/client/ui-shared';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import capitalize from 'libs/client/utils/src/capitalize';
 
 const StyledApp = styled.div`
   // Your style here
@@ -19,7 +18,7 @@ export function App() {
   }, []);
   return (
     <>
-      <Header title={data || '...'} />
+      <Header title={capitalize(data) || '...'} />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
         dolores in necessitatibus, error quasi soluta id, repellendus magni
@@ -28,7 +27,7 @@ export function App() {
         ab dolore vitae mollitia?
       </p>
       <ul>
-        <li>hello</li>
+        <li>{capitalize('hello')}</li>
       </ul>
     </>
   );
