@@ -1,1 +1,2 @@
-start: npx nx run api:serve
+start: npm install
+web: npx nx run api:serve
