@@ -1,1 +1,1 @@
-web: npx nx run api:serve
+web: npm run start-server
