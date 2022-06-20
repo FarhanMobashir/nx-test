@@ -9,7 +9,7 @@ const StyledHeader = styled.div`
   color: white;
   background-color: #c700009a;
   padding: 10px;
-  font-size: 1.5em;
+  font-size: 3rem;
   text-align: center;
 `;
 
